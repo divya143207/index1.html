@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Image with JavaScript</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border: 1px solid black;"></canvas>
+    <script>
+        // Get the canvas element and its context
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set background color
+        ctx.fillStyle = '#f0f8ff'; // Light blue background
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw a circle
+        ctx.beginPath();
+        ctx.arc(250, 150, 50, 0, Math.PI * 2, false); // x, y, radius, start angle, end angle
+        ctx.fillStyle = '#ff6347'; // Tomato color
+        ctx.fill();
+        ctx.closePath();
+
+        // Draw a rectangle
+        ctx.fillStyle = '#4682b4'; // Steel blue color
+        ctx.fillRect(150, 250, 200, 100); // x, y, width, height
+
+        // Draw some text
+        ctx.font = '20px Arial';
+        ctx.fillStyle = '#2e8b57'; // Sea green color
+        ctx.fillText('Hello, Canvas!', 180, 400); // text, x, y
+
+        // Draw a line
+        ctx.beginPath();
+        ctx.moveTo(100, 450); // Start point
+        ctx.lineTo(400, 450); // End point
+        ctx.strokeStyle = '#000'; // Black color
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.closePath();
+    </script>
+</body>
+</html>
